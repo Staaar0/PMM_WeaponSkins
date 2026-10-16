@@ -1,0 +1,1042 @@
+/* ============================================================
+   WeaponSkins locker
+   Window: 70% x 78% of the screen. Cards: five per row, fluid width.
+   Item pictures come from ws_art.css and ws_stickers.css (generated).
+   ============================================================ */
+
+.ws-screen
+{
+	width: 100%;
+	height: 100%;
+	z-index: 2000000000;
+}
+
+.ws-root
+{
+	width: 70%;
+	height: 78%;
+	horizontal-align: center;
+	vertical-align: middle;
+	flow-children: down;
+	padding: 18px 22px 10px 22px;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#18202cf5), to(#0c1118f5));
+	border: 1px solid #3a4658;
+	border-radius: 14px;
+	box-shadow: #000000b0 0px 18px 48px 0px;
+	overflow: clip clip;
+}
+
+.ws-root.ws-hidden
+{
+	visibility: collapse;
+}
+
+.ws-off
+{
+	visibility: collapse;
+}
+
+/* ---------- views ---------- */
+
+.only-grid,
+.only-board,
+.only-stickers
+{
+	visibility: collapse;
+}
+
+.ws-root.view-grid .only-grid,
+.ws-root.view-board .only-board,
+.ws-root.show-stickers .only-stickers
+{
+	visibility: visible;
+}
+
+/* ---------- header ---------- */
+
+.ws-top
+{
+	width: 100%;
+	height: 84px;
+	flow-children: right;
+	overflow: clip noclip;
+	border-bottom: 1px solid #2a3443;
+}
+
+.ws-heading
+{
+	width: fill-parent-flow(1.0);
+	flow-children: down;
+	vertical-align: top;
+}
+
+.ws-brand
+{
+	color: #f0b93f;
+	font-size: 15px;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+
+.ws-title
+{
+	color: #ffffff;
+	font-size: 32px;
+	letter-spacing: 1px;
+	margin-top: 2px;
+	text-transform: uppercase;
+	width: 100%;
+	text-overflow: shrink;
+}
+
+.ws-crumb
+{
+	color: #a3adbb;
+	font-size: 16px;
+	width: 100%;
+	text-overflow: shrink;
+}
+
+.ws-tools
+{
+	flow-children: right;
+	horizontal-align: right;
+	vertical-align: top;
+	margin-top: 4px;
+}
+
+.ws-back
+{
+	height: 42px;
+	padding: 0px 20px;
+	margin-right: 10px;
+	background-color: #1b232e;
+	border: 2px solid #344155;
+	border-radius: 21px;
+	transition-property: brightness, transform;
+	transition-duration: 0.12s;
+	transition-timing-function: ease-out;
+}
+
+.ws-back:hover
+{
+	border: 2px solid #f0b93f;
+	brightness: 1.25;
+}
+
+.ws-back Label
+{
+	color: #f4f7fb;
+	font-size: 17px;
+	letter-spacing: 1px;
+	vertical-align: middle;
+}
+
+.ws-x
+{
+	width: 42px;
+	height: 42px;
+	background-color: #c93642;
+	border-radius: 21px;
+	transition-property: brightness, transform;
+	transition-duration: 0.12s;
+	transition-timing-function: ease-out;
+}
+
+.ws-x:hover
+{
+	background-color: #f2495a;
+	transform: scale3d(1.08, 1.08, 1);
+}
+
+.ws-x Label
+{
+	color: #ffffff;
+	font-size: 24px;
+	horizontal-align: center;
+	vertical-align: middle;
+}
+
+/* ---------- body ---------- */
+
+.ws-body
+{
+	width: 100%;
+	height: fill-parent-flow(1.0);
+	flow-children: right;
+	margin-top: 14px;
+}
+
+/* ---------- left column ---------- */
+
+.ws-rail
+{
+	width: 22%;
+	height: 100%;
+	flow-children: down;
+	margin-right: 18px;
+	overflow: clip noclip;
+}
+
+.ws-side
+{
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+	overflow: noclip noclip;
+}
+
+.ws-cat
+{
+	width: 100%;
+	height: 68px;
+	margin-bottom: 8px;
+	flow-children: right;
+	padding: 9px 10px;
+	background-color: gradient(linear, 0% 0%, 100% 0%, from(#18202b), to(#141a23));
+	border: 2px solid #253142;
+	border-radius: 10px;
+	transition-property: brightness, transform;
+	transition-duration: 0.12s;
+	transition-timing-function: ease-out;
+}
+
+.ws-cat:hover
+{
+	border: 2px solid #c9a15a;
+	brightness: 1.2;
+}
+
+.ws-root.cat-weapons #ws-cat-weapons,
+.ws-root.cat-knife #ws-cat-knife,
+.ws-root.cat-gloves #ws-cat-gloves,
+.ws-root.cat-agents #ws-cat-agents,
+.ws-root.cat-music #ws-cat-music,
+.ws-root.cat-pins #ws-cat-pins,
+.ws-root.cat-stickers #ws-cat-stickers
+{
+	border: 2px solid #f0b93f;
+	background-color: gradient(linear, 0% 0%, 100% 0%, from(#3a2e14), to(#1a1d22));
+	box-shadow: #f0b93f40 0px 0px 12px 0px;
+}
+
+.ws-swatch
+{
+	width: 50px;
+	height: 50px;
+	border-radius: 8px;
+	margin-right: 12px;
+	vertical-align: middle;
+	background-size: 92% 69%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.ws-swatch-weapons { background-color: #2a2a22; background-image: url("s2r://panorama/images/econ/weapons/base_weapons/weapon_ak47_png.vtex"); }
+.ws-swatch-knife { background-color: #3a2a22; background-image: url("s2r://panorama/images/econ/weapons/base_weapons/weapon_knife_push_png.vtex"); }
+.ws-swatch-gloves { background-color: #2a2438; background-image: url("s2r://panorama/images/econ/wearables/gloves/ct_defaultgloves_png.vtex"); }
+.ws-swatch-agents { background-color: #243044; background-image: url("s2r://panorama/images/econ/characters/customplayer_tm_professional_varg_png.vtex"); }
+.ws-swatch-music { background-color: #2a2030; background-image: url("s2r://panorama/images/econ/music_kits/valve_cs2_01_png.vtex"); }
+.ws-swatch-pins { background-color: #302a18; background-image: url("s2r://panorama/images/econ/status_icons/5yearcoin_png.vtex"); }
+.ws-swatch-stickers { background-color: #1e3348; background-image: url("s2r://panorama/images/econ/stickers/dreamhack/dh_gologo1_png.vtex"); }
+
+.ws-cat-text
+{
+	width: fill-parent-flow(1.0);
+	flow-children: down;
+	vertical-align: middle;
+}
+
+.ws-cat-name
+{
+	color: #f4f7fb;
+	font-size: 18px;
+	letter-spacing: 1px;
+	width: 100%;
+	text-overflow: shrink;
+}
+
+.ws-root.cat-weapons #ws-cat-weapons .ws-cat-name,
+.ws-root.cat-knife #ws-cat-knife .ws-cat-name,
+.ws-root.cat-gloves #ws-cat-gloves .ws-cat-name,
+.ws-root.cat-agents #ws-cat-agents .ws-cat-name,
+.ws-root.cat-music #ws-cat-music .ws-cat-name,
+.ws-root.cat-pins #ws-cat-pins .ws-cat-name,
+.ws-root.cat-stickers #ws-cat-stickers .ws-cat-name
+{
+	color: #f0b93f;
+}
+
+.ws-cat-sub
+{
+	color: #b4bdca;
+	font-size: 14px;
+	margin-top: 2px;
+	width: 100%;
+	height: 20px;
+	text-overflow: shrink;
+}
+
+/* ---------- main column ---------- */
+
+.ws-main
+{
+	width: fill-parent-flow(1.0);
+	height: 100%;
+	flow-children: down;
+	overflow: clip noclip;
+}
+
+.ws-grid
+{
+	width: 100%;
+	height: fill-parent-flow(1.0);
+	flow-children: down;
+	overflow: clip scroll;
+	padding-top: 4px;
+}
+
+.ws-cards
+{
+	width: 100%;
+	flow-children: right;
+	overflow: noclip noclip;
+}
+
+/* a page turn sends the scroll bar of the grid back to the top: the plugin switches the grid off for a moment (StartFlip) */
+.ws-root.ws-flip .ws-grid
+{
+	overflow: clip clip;
+}
+
+.ws-root.ws-flip .ws-cards
+{
+	visibility: collapse;
+}
+
+/* ---------- item cards ---------- */
+
+.ws-card
+{
+	width: fill-parent-flow(1.0);
+	height: 206px;
+	margin: 0px 8px 10px 0px;
+	flow-children: down;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#1a2230), color-stop(0.55, #1c2333), to(#262e3c));
+	border: 2px solid #2b3446;
+	border-radius: 10px;
+	transition-property: transform, brightness, box-shadow;
+	transition-duration: 0.12s;
+	transition-timing-function: ease-out;
+}
+
+.ws-card:last-child
+{
+	margin-right: 0px;
+}
+
+.ws-card:hover
+{
+	brightness: 1.18;
+}
+
+.ws-card.ws-dis
+{
+	opacity: 0.55;
+}
+
+/* empty cell of the last row: keeps the five column widths. After .ws-dis, so a cell that used to hold a disabled card stays invisible */
+.ws-card.ws-ghost
+{
+	opacity: 0;
+}
+
+.ws-art
+{
+	width: 128px;
+	height: 96px;
+	horizontal-align: center;
+	margin-top: 28px;
+	margin-bottom: 2px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.ws-art-in
+{
+	width: 100%;
+	height: 100%;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.ws-card.ws-noart .ws-art
+{
+	opacity: 0;
+}
+
+.ws-bar
+{
+	width: 84%;
+	height: 3px;
+	horizontal-align: center;
+	margin-top: 6px;
+	background-color: #6c7686;
+	border-radius: 2px;
+}
+
+.ws-name
+{
+	color: #ffffff;
+	font-size: 15px;
+	horizontal-align: center;
+	margin-top: 6px;
+	text-align: center;
+	width: 92%;
+	height: 38px;
+	white-space: normal;
+	text-overflow: shrink;
+}
+
+.ws-sub
+{
+	color: #98a2b0;
+	font-size: 13px;
+	letter-spacing: 1px;
+	horizontal-align: center;
+	margin-top: 2px;
+	text-align: center;
+	width: 92%;
+	height: 19px;
+	text-overflow: shrink;
+	text-transform: uppercase;
+}
+
+/* rarity: frame, bottom tint, bar and the rarity line */
+.ws-card.rar-1 { border: 2px solid #b0c3d9a0; background-color: gradient(linear, 0% 0%, 0% 100%, from(#1a2230), color-stop(0.55, #1c2333), to(#3f4a58)); }
+.ws-card.rar-2 { border: 2px solid #5e98d9a0; background-color: gradient(linear, 0% 0%, 0% 100%, from(#1a2230), color-stop(0.55, #1c2333), to(#22405e)); }
+.ws-card.rar-3 { border: 2px solid #4b69ffa0; background-color: gradient(linear, 0% 0%, 0% 100%, from(#1a2230), color-stop(0.55, #1c2333), to(#1f2d6e)); }
+.ws-card.rar-4 { border: 2px solid #8847ffa0; background-color: gradient(linear, 0% 0%, 0% 100%, from(#1a2230), color-stop(0.55, #1c2333), to(#3a2470)); }
+.ws-card.rar-5 { border: 2px solid #d32ce6a0; background-color: gradient(linear, 0% 0%, 0% 100%, from(#1a2230), color-stop(0.55, #1c2333), to(#5a1f63)); }
+.ws-card.rar-6 { border: 2px solid #eb4b4ba0; background-color: gradient(linear, 0% 0%, 0% 100%, from(#1a2230), color-stop(0.55, #1c2333), to(#5f2428)); }
+.ws-card.rar-7 { border: 2px solid #e4ae39a0; background-color: gradient(linear, 0% 0%, 0% 100%, from(#1a2230), color-stop(0.55, #1c2333), to(#5e4618)); }
+
+.ws-card.rar-1 .ws-bar { background-color: #b0c3d9; }
+.ws-card.rar-2 .ws-bar { background-color: #5e98d9; }
+.ws-card.rar-3 .ws-bar { background-color: #4b69ff; }
+.ws-card.rar-4 .ws-bar { background-color: #8847ff; }
+.ws-card.rar-5 .ws-bar { background-color: #d32ce6; }
+.ws-card.rar-6 .ws-bar { background-color: #eb4b4b; }
+.ws-card.rar-7 .ws-bar { background-color: #e4ae39; }
+
+.ws-card.rar-1 .ws-sub { color: #c9d6e4; }
+.ws-card.rar-2 .ws-sub { color: #8db8e8; }
+.ws-card.rar-3 .ws-sub { color: #8197ff; }
+.ws-card.rar-4 .ws-sub { color: #ae85ff; }
+.ws-card.rar-5 .ws-sub { color: #e47bef; }
+.ws-card.rar-6 .ws-sub { color: #f38a8a; }
+.ws-card.rar-7 .ws-sub { color: #efc874; }
+
+.ws-card.rar-1:hover { border: 2px solid #b0c3d9; }
+.ws-card.rar-2:hover { border: 2px solid #5e98d9; }
+.ws-card.rar-3:hover { border: 2px solid #4b69ff; }
+.ws-card.rar-4:hover { border: 2px solid #8847ff; }
+.ws-card.rar-5:hover { border: 2px solid #d32ce6; }
+.ws-card.rar-6:hover { border: 2px solid #eb4b4b; }
+.ws-card.rar-7:hover { border: 2px solid #e4ae39; }
+
+.ws-card.is-stock:hover
+{
+	border: 2px solid #8a94a4;
+}
+
+/* equipped for the team the player stands in: the frame takes the team colour */
+.ws-root.team-t .ws-card.is-eq
+{
+	border: 2px solid #f0b93f;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#3f3216), color-stop(0.55, #2b2415), to(#6a421a));
+	box-shadow: #f0b93f50 0px 0px 14px 0px;
+}
+
+.ws-root.team-ct .ws-card.is-eq
+{
+	border: 2px solid #4f9cff;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#16263f), color-stop(0.55, #15202e), to(#1a3a6a));
+	box-shadow: #4f9cff50 0px 0px 14px 0px;
+}
+
+.ws-root.team-t .ws-card.is-eq .ws-bar { background-color: #f0b93f; }
+.ws-root.team-ct .ws-card.is-eq .ws-bar { background-color: #4f9cff; }
+.ws-root.team-t .ws-card.is-eq .ws-name { color: #f0b93f; }
+.ws-root.team-ct .ws-card.is-eq .ws-name { color: #8fc0ff; }
+
+/* T / CT dots, top left: filled = this item is equipped for that team */
+.ws-dots
+{
+	ignore-parent-flow: true;
+	horizontal-align: left;
+	vertical-align: top;
+	margin: 7px;
+	flow-children: right;
+}
+
+.ws-dot
+{
+	width: 24px;
+	height: 24px;
+	margin-right: 4px;
+	border-radius: 12px;
+	border: 2px solid #4a5568;
+	background-color: #0e131bd0;
+}
+
+.ws-dot Label
+{
+	color: #6c7686;
+	font-size: 10px;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.ws-card.on-t .ws-dot-t
+{
+	border: 2px solid #f0b93f;
+	background-color: #f0b93f;
+	box-shadow: #f0b93f80 0px 0px 6px 0px;
+}
+
+.ws-card.on-t .ws-dot-t Label
+{
+	color: #1a1408;
+}
+
+.ws-card.on-ct .ws-dot-ct
+{
+	border: 2px solid #4f9cff;
+	background-color: #4f9cff;
+	box-shadow: #4f9cff80 0px 0px 6px 0px;
+}
+
+.ws-card.on-ct .ws-dot-ct Label
+{
+	color: #ffffff;
+}
+
+/* EQUIPPED badge, top right, in the team colour */
+.ws-badge
+{
+	visibility: collapse;
+	ignore-parent-flow: true;
+	horizontal-align: right;
+	vertical-align: top;
+	margin: 8px;
+	padding: 3px 8px;
+	background-color: #f0b93f;
+	border-radius: 4px;
+}
+
+.ws-root.team-ct .ws-badge
+{
+	background-color: #4f9cff;
+}
+
+.ws-badge Label
+{
+	color: #1a1408;
+	font-size: 11px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.ws-root.team-ct .ws-badge Label
+{
+	color: #ffffff;
+}
+
+.ws-card.is-eq .ws-badge
+{
+	visibility: visible;
+}
+
+/* cards that only lead somewhere (weapon categories) show no equipped marks */
+.ws-card.ws-plain .ws-dots,
+.ws-card.ws-plain .ws-badge
+{
+	visibility: collapse;
+}
+
+/* ---------- board: preview on the left, option rows on the right ---------- */
+
+.ws-board
+{
+	width: 100%;
+	height: fill-parent-flow(1.0);
+	flow-children: right;
+	padding-top: 4px;
+}
+
+.ws-pv
+{
+	width: 40%;
+	height: 100%;
+	flow-children: down;
+	margin-right: 16px;
+	padding: 16px 14px;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#1a2230), to(#121821));
+	border: 2px solid #2c3848;
+	border-radius: 12px;
+}
+
+.ws-pv-art
+{
+	width: 267px;
+	height: 200px;
+	horizontal-align: center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.ws-pv-bar
+{
+	width: 84%;
+	height: 3px;
+	horizontal-align: center;
+	margin-top: 8px;
+	background-color: #6c7686;
+	border-radius: 2px;
+}
+
+.ws-pv-title
+{
+	color: #ffffff;
+	font-size: 24px;
+	margin-top: 10px;
+	width: 100%;
+	text-align: center;
+	text-overflow: shrink;
+}
+
+.ws-pv-sub
+{
+	color: #98a2b0;
+	font-size: 15px;
+	letter-spacing: 1px;
+	margin-top: 2px;
+	width: 100%;
+	text-align: center;
+	text-overflow: shrink;
+	text-transform: uppercase;
+}
+
+.ws-pv-lines
+{
+	width: 100%;
+	flow-children: down;
+	margin-top: 12px;
+}
+
+.ws-pv-line
+{
+	color: #c6cfdb;
+	font-size: 16px;
+	width: 100%;
+	height: 22px;
+	text-align: center;
+	text-overflow: shrink;
+}
+
+/* four equal squares, two by two, with the "All" button under them */
+.ws-pv-stickers
+{
+	width: 188px;
+	height: 108px;
+	horizontal-align: center;
+	margin-top: 10px;
+	flow-children: down;
+}
+
+.ws-pv-strow
+{
+	width: 184px;
+	height: 54px;
+	horizontal-align: center;
+	flow-children: right;
+}
+
+/* the sticker class goes on the button, the same way as on the rail swatches */
+.ws-pv-st
+{
+	width: 84px;
+	height: 48px;
+	margin: 3px 4px;
+	background-color: #0e131bd0;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid #2c3848;
+	border-radius: 6px;
+}
+
+.ws-pv-st.has-art
+{
+	border: 2px solid #f0b93f;
+}
+
+/* clickable only where a click can open the sticker menu (see Plugin.OpenStickerSlot) */
+.ws-root.st-live .ws-pv-st:hover
+{
+	border: 2px solid #ffffff;
+	brightness: 1.3;
+}
+
+/* "All" fills slots 1 to 4 at once. Only the sticker slots board has it (the plugin sets st-all) */
+.ws-pv-all
+{
+	visibility: collapse;
+	width: 176px;
+	height: 44px;
+	horizontal-align: center;
+	margin-top: 2px;
+	background-color: gradient(linear, 0% 0%, 100% 0%, from(#1a2230), to(#161d29));
+	border: 2px solid #2b3446;
+	border-radius: 10px;
+	transition-property: brightness;
+	transition-duration: 0.12s;
+}
+
+.ws-root.show-stickers.st-all .ws-pv-all
+{
+	visibility: visible;
+}
+
+.ws-pv-all:hover
+{
+	border: 2px solid #c9a15a;
+	brightness: 1.2;
+}
+
+.ws-pv-alltext
+{
+	width: 100%;
+	color: #ffffff;
+	font-size: 19px;
+	text-align: center;
+	vertical-align: middle;
+	text-overflow: shrink;
+}
+
+.ws-pv-stn
+{
+	ignore-parent-flow: true;
+	color: #8a94a4;
+	font-size: 11px;
+	horizontal-align: left;
+	vertical-align: top;
+	margin: 1px 4px;
+}
+
+/* the preview takes the rarity colour of the item */
+.ws-pv.rar-1 { border: 2px solid #b0c3d9a0; }
+.ws-pv.rar-2 { border: 2px solid #5e98d9a0; }
+.ws-pv.rar-3 { border: 2px solid #4b69ffa0; }
+.ws-pv.rar-4 { border: 2px solid #8847ffa0; }
+.ws-pv.rar-5 { border: 2px solid #d32ce6a0; }
+.ws-pv.rar-6 { border: 2px solid #eb4b4ba0; }
+.ws-pv.rar-7 { border: 2px solid #e4ae39a0; }
+
+.ws-pv.rar-1 .ws-pv-bar { background-color: #b0c3d9; }
+.ws-pv.rar-2 .ws-pv-bar { background-color: #5e98d9; }
+.ws-pv.rar-3 .ws-pv-bar { background-color: #4b69ff; }
+.ws-pv.rar-4 .ws-pv-bar { background-color: #8847ff; }
+.ws-pv.rar-5 .ws-pv-bar { background-color: #d32ce6; }
+.ws-pv.rar-6 .ws-pv-bar { background-color: #eb4b4b; }
+.ws-pv.rar-7 .ws-pv-bar { background-color: #e4ae39; }
+
+.ws-rows
+{
+	width: fill-parent-flow(1.0);
+	height: 100%;
+	flow-children: down;
+	overflow: clip scroll;
+}
+
+.ws-row
+{
+	width: 100%;
+	height: 58px;
+	margin-bottom: 8px;
+	padding: 0px 14px 0px 10px;
+	flow-children: right;
+	background-color: gradient(linear, 0% 0%, 100% 0%, from(#1a2230), to(#161d29));
+	border: 2px solid #2b3446;
+	border-radius: 10px;
+	transition-property: brightness, transform;
+	transition-duration: 0.12s;
+	transition-timing-function: ease-out;
+}
+
+.ws-row:hover
+{
+	border: 2px solid #c9a15a;
+	brightness: 1.2;
+}
+
+.ws-row.is-eq
+{
+	border: 2px solid #f0b93f;
+	background-color: gradient(linear, 0% 0%, 100% 0%, from(#3a2e14), to(#1a1d22));
+}
+
+.ws-row.ws-dis
+{
+	opacity: 0.5;
+}
+
+.ws-rart
+{
+	visibility: collapse;
+	width: 64px;
+	height: 48px;
+	vertical-align: middle;
+	margin-right: 12px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.ws-row.has-art .ws-rart
+{
+	visibility: visible;
+}
+
+/* name above, value below: a column that fills the row, like the text of the rail buttons */
+.ws-rtext
+{
+	width: fill-parent-flow(1.0);
+	flow-children: down;
+	vertical-align: middle;
+}
+
+.ws-rname
+{
+	width: 100%;
+	color: #ffffff;
+	font-size: 19px;
+	text-overflow: shrink;
+}
+
+/* rows that are only a name (search, remove) */
+.ws-row.is-center .ws-rname
+{
+	text-align: center;
+}
+
+.ws-row.is-center .ws-rarrow
+{
+	visibility: collapse;
+}
+
+.ws-rval
+{
+	visibility: collapse;
+	width: 100%;
+	height: 20px;
+	margin-top: 1px;
+	color: #b4bdca;
+	font-size: 15px;
+	text-overflow: shrink;
+}
+
+.ws-row.has-val .ws-rval
+{
+	visibility: visible;
+}
+
+.ws-row.is-on .ws-rval
+{
+	color: #6fe08a;
+}
+
+.ws-row.is-off .ws-rval
+{
+	color: #8a94a4;
+}
+
+.ws-rarrow
+{
+	vertical-align: middle;
+	margin-left: 12px;
+	color: #6c7686;
+	font-size: 26px;
+}
+
+/* ---------- prompt: the player types the answer in the chat ---------- */
+
+.ws-prompt
+{
+	visibility: collapse;
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	background-color: #070a10d8;
+	border-radius: 12px;
+}
+
+.ws-root.prompting .ws-prompt
+{
+	visibility: visible;
+}
+
+.ws-prompt-box
+{
+	width: 78%;
+	horizontal-align: center;
+	vertical-align: middle;
+	flow-children: down;
+	padding: 26px 30px;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#222c3c), to(#151c28));
+	border: 2px solid #f0b93f;
+	border-radius: 14px;
+	box-shadow: #f0b93f30 0px 0px 24px 0px;
+}
+
+.ws-prompt-title
+{
+	color: #f0b93f;
+	font-size: 20px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	horizontal-align: center;
+}
+
+.ws-prompt-text
+{
+	color: #ffffff;
+	font-size: 26px;
+	margin-top: 12px;
+	width: 100%;
+	text-align: center;
+	white-space: normal;
+	text-overflow: shrink;
+}
+
+.ws-prompt-hint
+{
+	color: #a3adbb;
+	font-size: 17px;
+	margin-top: 14px;
+	width: 100%;
+	text-align: center;
+	white-space: normal;
+	text-overflow: shrink;
+}
+
+/* ---------- footer ---------- */
+
+.ws-foot
+{
+	width: 100%;
+	height: 44px;
+	margin-top: 6px;
+	flow-children: right;
+	border-top: 1px solid #2a3443;
+	padding-top: 4px;
+}
+
+/* the hint stays at the left, the pager sits in the middle of the card area: the spacer is as wide as the rail and the gap */
+.ws-hint
+{
+	ignore-parent-flow: true;
+	width: 36%;
+	horizontal-align: left;
+	color: #a3adbb;
+	font-size: 16px;
+	vertical-align: middle;
+	text-overflow: shrink;
+}
+
+.ws-foot-pad
+{
+	width: 22%;
+	height: 100%;
+	margin-right: 18px;
+}
+
+.ws-foot-main
+{
+	width: fill-parent-flow(1.0);
+	height: 100%;
+}
+
+.ws-pager
+{
+	visibility: collapse;
+	flow-children: right;
+	horizontal-align: center;
+	vertical-align: middle;
+	margin-right: 6px;
+}
+
+.ws-root.multi-page .ws-pager
+{
+	visibility: visible;
+}
+
+.ws-page,
+.ws-num
+{
+	width: 36px;
+	height: 36px;
+	margin-left: 6px;
+	background-color: #1c2430;
+	border: 2px solid #2b3446;
+	border-radius: 8px;
+	transition-property: brightness;
+	transition-duration: 0.12s;
+}
+
+.ws-page:hover,
+.ws-num:hover
+{
+	border: 2px solid #c9a15a;
+	brightness: 1.25;
+}
+
+.ws-page.ws-dim
+{
+	opacity: 0.35;
+}
+
+.ws-num.is-cur
+{
+	background-color: #f0b93f;
+	border: 2px solid #f0b93f;
+}
+
+.ws-num.is-cur Label
+{
+	color: #1a1408;
+}
+
+.ws-page Label,
+.ws-num Label
+{
+	color: #f4f7fb;
+	font-size: 17px;
+	horizontal-align: center;
+	vertical-align: middle;
+}
+
+/* ---------- default items: game pictures, and our own for "no music" and "no pin" ---------- */
+
+.gl-def-t { background-image: url("s2r://panorama/images/econ/wearables/gloves/t_defaultgloves_png.vtex"); }
+.gl-def-ct { background-image: url("s2r://panorama/images/econ/wearables/gloves/ct_defaultgloves_png.vtex"); }
+.ag-def-t { background-image: url("s2r://panorama/images/econ/characters/customplayer_t_map_based_png.vtex"); }
+.ag-def-ct { background-image: url("s2r://panorama/images/econ/characters/customplayer_ct_map_based_png.vtex"); }
+.bw-knife { background-image: url("s2r://panorama/images/econ/weapons/base_weapons/weapon_knife_png.vtex"); }
+.mk-none { background-image: url("s2r://panorama/images/custom_game/ws_music_none_png.vtex"); }
+.pn-none { background-image: url("s2r://panorama/images/custom_game/ws_pin_none_png.vtex"); }
+.ws-folder { background-image: url("s2r://panorama/images/custom_game/ws_folder_png.vtex"); }

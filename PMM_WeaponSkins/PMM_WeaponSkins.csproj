@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>PMM_WeaponSkins</AssemblyName>
+        <RootNamespace>PMM_WeaponSkins</RootNamespace>
+        <Product>PanoramaMenuManager_WeaponSkins</Product>
+        <Version>1.0.0</Version>
+        <GenerateDependencyFile>false</GenerateDependencyFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CounterStrikeSharp.API" Version="1.0.376"/>
+        <ProjectReference Include="..\MenuManagerApi\MenuManagerApi.csproj">
+            <Private>false</Private>
+        </ProjectReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="panorama\**\*.*" CopyToOutputDirectory="PreserveNewest"/>
+        <None Update="ws_items.json" CopyToOutputDirectory="PreserveNewest"/>
+    </ItemGroup>
+
+</Project>

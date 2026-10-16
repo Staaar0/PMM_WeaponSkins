@@ -1,0 +1,55 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: [README.md]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency: release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Next version
+        id: next
+        run: |
+          last=$(git tag -l 'v*' | grep -E '^v[1-9][0-9]*\.[0-9]+\.[0-9]+$' | sort -V | tail -n 1 || true)
+          if [ -z "$last" ]; then
+            version=1.0.0
+          else
+            IFS=. read -r major minor patch <<< "${last#v}"
+            patch=$((patch + 1))
+            if [ "$patch" -gt 9 ]; then patch=0; minor=$((minor + 1)); fi
+            if [ "$minor" -gt 9 ]; then minor=0; major=$((major + 1)); fi
+            version="$major.$minor.$patch"
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Build
+        run: dotnet build PMM_WeaponSkins/PMM_WeaponSkins.csproj -c Release -p:Version=${{ steps.next.outputs.version }}
+
+      - name: Package
+        run: |
+          plugin=package/Server-plugins/counterstrikesharp/plugins/PMM_WeaponSkins
+          mkdir -p "$plugin" package/Content-addonmanager
+          cp PMM_WeaponSkins/bin/Release/net10.0/PMM_WeaponSkins.dll PMM_WeaponSkins/ws_items.json "$plugin/"
+          cp -r PMM_WeaponSkins/panorama package/Content-addonmanager/panorama
+          (cd package && zip -r -9 -q ../PMM_WeaponSkins.zip .)
+
+      - name: Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "v${{ steps.next.outputs.version }}" PMM_WeaponSkins.zip --target "$GITHUB_SHA" --title "v${{ steps.next.outputs.version }}" --generate-notes
